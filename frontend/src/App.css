@@ -1,0 +1,51 @@
+.layout {
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.site-layout-content {
+  min-height: 280px;
+  padding: 24px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.query-interface {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.query-type-selector {
+  margin-bottom: 20px;
+}
+
+.response-container {
+  margin-top: 20px;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+.response-content {
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+.references-list {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.loading-container {
+  text-align: center;
+  margin: 20px 0;
+  padding: 30px 50px;
+  border-radius: 4px;
+}
