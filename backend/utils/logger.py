@@ -7,7 +7,7 @@ from typing import Optional
 from backend.config import settings
 
 def setup_logger(
-    name: str = "legal_wise",
+    name: str = "rightify",
     level: str = "INFO",
     log_file: Optional[str] = None,
     max_size: int = 10 * 1024 * 1024,
@@ -72,7 +72,7 @@ def setup_logger(
 
 # 创建默认日志记录器
 logger = setup_logger(
-    name="legal_wise",
+    name="rightify",
     level=settings.log_level,
     log_file=settings.log_file,
     max_size=settings.log_max_size,
@@ -80,14 +80,14 @@ logger = setup_logger(
 )
 
 # 为不同模块创建专用日志记录器
-agent_logger = setup_logger("legal_wise.agent")
-api_logger = setup_logger("legal_wise.api")
-tools_logger = setup_logger("legal_wise.tools")
+agent_logger = setup_logger("rightify.agent")
+api_logger = setup_logger("rightify.api")
+tools_logger = setup_logger("rightify.tools")
 
 # 导出常用函数
 def get_logger(name: str) -> logging.Logger:
     """获取指定名称的日志记录器"""
-    return logging.getLogger(f"legal_wise.{name}")
+    return logging.getLogger(f"rightify.{name}")
 
 def log_function_call(func_name: str, args: dict = None, kwargs: dict = None):
     """记录函数调用"""

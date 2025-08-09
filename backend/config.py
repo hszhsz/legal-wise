@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     """应用配置类"""
     
     # 基础配置
-    app_name: str = "Legal Wise"
+    app_name: str = "Rightify"
     app_version: str = "2.0.0"
     debug: bool = False
     
