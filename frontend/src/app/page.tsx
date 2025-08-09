@@ -13,6 +13,7 @@ import {
 } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import RightifyLogo from '../components/RightifyLogo'
+import ThemeToggle from '../components/ThemeToggle'
 
 const features = [
   {
@@ -73,30 +74,31 @@ export default function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       {/* Navigation */}
-      <nav className="fixed w-full bg-white/95 backdrop-blur-sm border-b border-gray-300 z-50">
+      <nav className="fixed w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-b border-gray-300 dark:border-gray-700 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0 flex items-center">
-                <RightifyLogo size={32} className="text-gray-900" />
-                <span className="ml-2 text-xl font-bold text-gray-900">Rightify</span>
+                <RightifyLogo size={32} className="text-gray-900 dark:text-white" />
+                <span className="ml-2 text-xl font-bold text-gray-900 dark:text-white">Rightify</span>
               </div>
             </div>
             
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
-                <a href="#features" className="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors">
+                <a href="#features" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium transition-colors">
                   功能特色
                 </a>
-                <a href="#about" className="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors">
+                <a href="#about" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium transition-colors">
                   关于我们
                 </a>
-                <a href="#testimonials" className="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors">
+                <a href="#testimonials" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 text-sm font-medium transition-colors">
                   用户评价
                 </a>
-                <Link href="/consultation" className="bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-black transition-colors">
+                <ThemeToggle />
+                <Link href="/consultation" className="bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-4 py-2 rounded-lg text-sm font-medium hover:bg-black dark:hover:bg-gray-100 transition-colors">
                   开始咨询
                 </Link>
               </div>
@@ -106,7 +108,7 @@ export default function HomePage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-gray-100 via-white to-gray-200">
+      <section className="pt-20 pb-16 bg-gradient-to-br from-gray-100 via-white to-gray-200 dark:from-gray-800 dark:via-gray-900 dark:to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <motion.div
@@ -114,22 +116,22 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
                 智能法律咨询
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-black">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-black dark:from-white dark:to-gray-300">
                   让公正触手可及
                 </span>
               </h1>
-              <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
                 基于先进AI技术的法律咨询平台，提供案情分析、案例检索、律师推荐等一站式法律服务，
                 让法律咨询更智能、更高效、更专业。
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/consultation" className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-gray-900 hover:bg-black transition-colors">
+                <Link href="/consultation" className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white dark:text-gray-900 bg-gray-900 dark:bg-white hover:bg-black dark:hover:bg-gray-100 transition-colors">
                   立即体验
                   <ChevronRightIcon className="ml-2 h-5 w-5" />
                 </Link>
-                <button className="inline-flex items-center px-8 py-3 border border-gray-400 text-base font-medium rounded-lg text-gray-800 bg-white hover:bg-gray-100 transition-colors">
+                <button className="inline-flex items-center px-8 py-3 border border-gray-400 dark:border-gray-600 text-base font-medium rounded-lg text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
                   观看演示
                   <SparklesIcon className="ml-2 h-5 w-5" />
                 </button>
@@ -140,7 +142,7 @@ export default function HomePage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -151,13 +153,13 @@ export default function HomePage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">
+                <div className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">
                   {stat.value}
                 </div>
-                <div className="text-lg font-semibold text-gray-900 mb-1">
+                <div className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
                   {stat.name}
                 </div>
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-gray-600 dark:text-gray-300">
                   {stat.description}
                 </div>
               </motion.div>
@@ -167,13 +169,13 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 bg-gray-50">
+      <section id="features" className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               核心功能特色
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               融合人工智能与法律专业知识，为您提供全方位的智能法律服务
             </p>
           </div>
@@ -185,17 +187,17 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+                className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
               >
                 <div className="flex items-center mb-4">
                   <div className={`p-3 rounded-lg bg-gradient-to-r ${feature.color}`}>
                     <feature.icon className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 ml-4">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white ml-4">
                     {feature.name}
                   </h3>
                 </div>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                   {feature.description}
                 </p>
               </motion.div>
@@ -205,13 +207,13 @@ export default function HomePage() {
       </section>
 
       {/* How it Works */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               工作流程
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-600 dark:text-gray-300">
               简单三步，获得专业法律建议
             </p>
           </div>
@@ -241,13 +243,13 @@ export default function HomePage() {
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                <div className="w-16 h-16 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
                   {item.step}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                   {item.title}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 dark:text-gray-300">
                   {item.description}
                 </p>
               </motion.div>
@@ -257,13 +259,13 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className="py-20 bg-gray-50">
+      <section id="testimonials" className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               用户评价
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-600 dark:text-gray-300">
               听听用户对我们服务的真实反馈
             </p>
           </div>
@@ -275,22 +277,22 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-6 shadow-lg"
+                className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg"
               >
-                <p className="text-gray-600 mb-4 italic">
+                <p className="text-gray-600 dark:text-gray-300 mb-4 italic">
                   "{testimonial.content}"
                 </p>
                 <div className="flex items-center">
-                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                    <span className="text-blue-600 font-semibold">
+                  <div className="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center">
+                    <span className="text-gray-900 dark:text-white font-semibold">
                       {testimonial.author[0]}
                     </span>
                   </div>
                   <div className="ml-3">
-                    <div className="text-sm font-semibold text-gray-900">
+                    <div className="text-sm font-semibold text-gray-900 dark:text-white">
                       {testimonial.author}
                     </div>
-                    <div className="text-xs text-gray-500">
+                    <div className="text-xs text-gray-500 dark:text-gray-400">
                       {testimonial.role} · {testimonial.company}
                     </div>
                   </div>
@@ -302,7 +304,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-gray-900 to-black">
+      <section className="py-20 bg-gradient-to-r from-gray-900 to-black dark:from-black dark:to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -324,26 +326,26 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-gray-900 dark:bg-black text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center mb-4">
-                <RightifyLogo size={32} className="text-gray-400" />
+                <RightifyLogo size={32} className="text-gray-400 dark:text-gray-300" />
                 <span className="ml-2 text-xl font-bold">Rightify</span>
               </div>
-              <p className="text-gray-400 mb-4">
+              <p className="text-gray-400 dark:text-gray-300 mb-4">
                 基于AI技术的智能法律咨询平台，致力于让法律服务更加智能化、便民化。
               </p>
               <div className="flex space-x-4">
-                <ShieldCheckIcon className="h-5 w-5 text-gray-400" />
-                <span className="text-sm text-gray-400">数据安全保护</span>
+                <ShieldCheckIcon className="h-5 w-5 text-gray-400 dark:text-gray-300" />
+                <span className="text-sm text-gray-400 dark:text-gray-300">数据安全保护</span>
               </div>
             </div>
             
             <div>
               <h3 className="text-lg font-semibold mb-4">服务</h3>
-              <ul className="space-y-2 text-gray-400">
+              <ul className="space-y-2 text-gray-400 dark:text-gray-300">
                 <li><a href="#" className="hover:text-white transition-colors">法律咨询</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">案例检索</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">律师推荐</a></li>
@@ -353,7 +355,7 @@ export default function HomePage() {
             
             <div>
               <h3 className="text-lg font-semibold mb-4">联系我们</h3>
-              <ul className="space-y-2 text-gray-400">
+              <ul className="space-y-2 text-gray-400 dark:text-gray-300">
                 <li>客服热线：400-123-4567</li>
                 <li>邮箱：contact@legalwise.com</li>
                 <li>地址：北京市朝阳区xxx大厦</li>
@@ -361,7 +363,7 @@ export default function HomePage() {
             </div>
           </div>
           
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+          <div className="border-t border-gray-800 dark:border-gray-700 mt-8 pt-8 text-center text-gray-400 dark:text-gray-300">
             <p>&copy; 2024 Rightify. 保留所有权利。</p>
           </div>
         </div>
