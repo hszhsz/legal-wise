@@ -191,7 +191,7 @@ export default function ConsultationPage() {
                 返回首页
               </Link>
             </div>
-            <h1 className="text-xl font-semibold text-gray-900">Legal Wise 智能咨询</h1>
+            <h1 className="text-xl font-semibold text-gray-900">Rightify 智能咨询</h1>
             <div className="w-20"></div>
           </div>
         </div>

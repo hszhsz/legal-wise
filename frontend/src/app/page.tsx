@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { 
   ChevronRightIcon, 
-  ScaleIcon, 
   ShieldCheckIcon, 
   UserGroupIcon,
   ChatBubbleLeftRightIcon,
@@ -13,6 +12,7 @@ import {
   SparklesIcon
 } from '@heroicons/react/24/outline'
 import Link from 'next/link'
+import RightifyLogo from '../components/RightifyLogo'
 
 const features = [
   {
@@ -50,7 +50,7 @@ const stats = [
 
 const testimonials = [
   {
-    content: "Legal Wise帮助我快速分析了合同纠纷的关键问题，节省了大量时间和成本。",
+    content: "Rightify帮助我快速分析了合同纠纷的关键问题，节省了大量时间和成本。",
     author: "张先生",
     role: "企业法务",
     company: "某科技公司"
@@ -80,8 +80,8 @@ export default function HomePage() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0 flex items-center">
-                <ScaleIcon className="h-8 w-8 text-blue-600" />
-                <span className="ml-2 text-xl font-bold text-gray-900">Legal Wise</span>
+                <RightifyLogo size={32} className="text-blue-600" />
+                <span className="ml-2 text-xl font-bold text-gray-900">Rightify</span>
               </div>
             </div>
             
@@ -117,7 +117,7 @@ export default function HomePage() {
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
                 智能法律咨询
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                  重新定义法律服务
+                  让公正触手可及
                 </span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
@@ -313,7 +313,7 @@ export default function HomePage() {
               准备开始您的法律咨询之旅？
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              立即体验Legal Wise的智能法律服务，获得专业、高效的法律建议
+              立即体验Rightify的智能法律服务，获得专业、高效的法律建议
             </p>
             <Link href="/consultation" className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-blue-600 bg-white hover:bg-gray-50 transition-colors">
               开始免费咨询
@@ -329,8 +329,8 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center mb-4">
-                <ScaleIcon className="h-8 w-8 text-blue-400" />
-                <span className="ml-2 text-xl font-bold">Legal Wise</span>
+                <RightifyLogo size={32} className="text-blue-400" />
+                <span className="ml-2 text-xl font-bold">Rightify</span>
               </div>
               <p className="text-gray-400 mb-4">
                 基于AI技术的智能法律咨询平台，致力于让法律服务更加智能化、便民化。
@@ -362,7 +362,7 @@ export default function HomePage() {
           </div>
           
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Legal Wise. 保留所有权利。</p>
+            <p>&copy; 2024 Rightify. 保留所有权利。</p>
           </div>
         </div>
       </footer>

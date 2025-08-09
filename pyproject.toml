@@ -1,9 +1,9 @@
 [project]
-name = "legal-wise"
+name = "rightify"
 version = "0.1.0"
-description = "智能法律咨询系统 - 基于LangChain和LangGraph的plan-and-execute agent"
+description = "智能法律咨询系统 - 基于LangChain和LangGraph的plan-and-execute agent，让公正触手可及"
 authors = [
-    {name = "AI Team", email = "team@legal-wise.com"}
+    {name = "AI Team", email = "team@rightify.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.12"

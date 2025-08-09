@@ -14,8 +14,8 @@ from backend.utils.logger import get_logger
 logger = get_logger(__name__)
 
 app = FastAPI(
-    title="Legal Wise API",
-    description="智能法律咨询系统 - 基于LangChain和LangGraph的plan-and-execute agent",
+    title="Rightify API",
+    description="智能法律咨询系统 - 基于LangChain和LangGraph的plan-and-execute agent，让公正触手可及",
     version="2.0.0"
 )
 
