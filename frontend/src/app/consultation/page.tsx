@@ -314,7 +314,7 @@ export default function ConsultationPage() {
                       onKeyPress={handleKeyPress}
                       placeholder={selectedService ? `请描述您的${selectedService.name}需求...` : '请先选择服务类型'}
                       disabled={!selectedService || isLoading}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none disabled:bg-gray-100 disabled:cursor-not-allowed"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none disabled:bg-gray-100 disabled:cursor-not-allowed text-gray-900 placeholder:text-gray-500"
                       rows={3}
                     />
                   </div>
