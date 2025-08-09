@@ -19,25 +19,25 @@ const features = [
     name: '智能案情分析',
     description: '基于AI的深度案情分析，快速识别法律关键点和风险要素',
     icon: DocumentTextIcon,
-    color: 'from-blue-500 to-cyan-500'
+    color: 'from-gray-800 to-gray-600'
   },
   {
     name: '精准案例检索',
     description: '海量法律案例数据库，智能匹配相似案例和判决先例',
     icon: MagnifyingGlassIcon,
-    color: 'from-purple-500 to-pink-500'
+    color: 'from-gray-700 to-gray-500'
   },
   {
     name: '专业律师推荐',
     description: '根据案件类型和地域，推荐最适合的专业律师',
     icon: UserGroupIcon,
-    color: 'from-green-500 to-emerald-500'
+    color: 'from-gray-900 to-gray-700'
   },
   {
     name: '实时法律咨询',
     description: '24/7在线法律咨询服务，即时获得专业法律建议',
     icon: ChatBubbleLeftRightIcon,
-    color: 'from-orange-500 to-red-500'
+    color: 'from-black to-gray-800'
   }
 ]
 
@@ -73,30 +73,30 @@ export default function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50">
       {/* Navigation */}
-      <nav className="fixed w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+      <nav className="fixed w-full bg-white/95 backdrop-blur-sm border-b border-gray-300 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0 flex items-center">
-                <RightifyLogo size={32} className="text-blue-600" />
+                <RightifyLogo size={32} className="text-gray-900" />
                 <span className="ml-2 text-xl font-bold text-gray-900">Rightify</span>
               </div>
             </div>
             
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
-                <a href="#features" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
+                <a href="#features" className="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors">
                   功能特色
                 </a>
-                <a href="#about" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
+                <a href="#about" className="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors">
                   关于我们
                 </a>
-                <a href="#testimonials" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
+                <a href="#testimonials" className="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors">
                   用户评价
                 </a>
-                <Link href="/consultation" className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors">
+                <Link href="/consultation" className="bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-black transition-colors">
                   开始咨询
                 </Link>
               </div>
@@ -106,7 +106,7 @@ export default function HomePage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      <section className="pt-20 pb-16 bg-gradient-to-br from-gray-100 via-white to-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <motion.div
@@ -116,7 +116,7 @@ export default function HomePage() {
             >
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
                 智能法律咨询
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-black">
                   让公正触手可及
                 </span>
               </h1>
@@ -125,11 +125,11 @@ export default function HomePage() {
                 让法律咨询更智能、更高效、更专业。
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/consultation" className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-colors">
+                <Link href="/consultation" className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-gray-900 hover:bg-black transition-colors">
                   立即体验
                   <ChevronRightIcon className="ml-2 h-5 w-5" />
                 </Link>
-                <button className="inline-flex items-center px-8 py-3 border border-gray-300 text-base font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 transition-colors">
+                <button className="inline-flex items-center px-8 py-3 border border-gray-400 text-base font-medium rounded-lg text-gray-800 bg-white hover:bg-gray-100 transition-colors">
                   观看演示
                   <SparklesIcon className="ml-2 h-5 w-5" />
                 </button>
@@ -302,7 +302,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+      <section className="py-20 bg-gradient-to-r from-gray-900 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -312,10 +312,10 @@ export default function HomePage() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               准备开始您的法律咨询之旅？
             </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               立即体验Rightify的智能法律服务，获得专业、高效的法律建议
             </p>
-            <Link href="/consultation" className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-blue-600 bg-white hover:bg-gray-50 transition-colors">
+            <Link href="/consultation" className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-gray-900 bg-white hover:bg-gray-100 transition-colors">
               开始免费咨询
               <ChevronRightIcon className="ml-2 h-5 w-5" />
             </Link>
@@ -329,7 +329,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center mb-4">
-                <RightifyLogo size={32} className="text-blue-400" />
+                <RightifyLogo size={32} className="text-gray-400" />
                 <span className="ml-2 text-xl font-bold">Rightify</span>
               </div>
               <p className="text-gray-400 mb-4">

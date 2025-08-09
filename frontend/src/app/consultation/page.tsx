@@ -36,7 +36,7 @@ const services: ServiceOption[] = [
     description: '获得专业的法律建议和解答',
     icon: DocumentTextIcon,
     endpoint: '/api/legal/consult',
-    color: 'from-blue-500 to-cyan-500'
+    color: 'from-gray-800 to-gray-600'
   },
   {
     id: 'analyze',
@@ -44,7 +44,7 @@ const services: ServiceOption[] = [
     description: '深度分析案件情况和法律要点',
     icon: ChartBarIcon,
     endpoint: '/api/legal/analyze',
-    color: 'from-purple-500 to-pink-500'
+    color: 'from-gray-900 to-gray-700'
   },
   {
     id: 'search',
@@ -52,7 +52,7 @@ const services: ServiceOption[] = [
     description: '查找相关法律案例和判决先例',
     icon: MagnifyingGlassIcon,
     endpoint: '/api/legal/search-cases',
-    color: 'from-green-500 to-emerald-500'
+    color: 'from-black to-gray-800'
   },
   {
     id: 'recommend',
@@ -60,7 +60,7 @@ const services: ServiceOption[] = [
     description: '推荐专业对口的执业律师',
     icon: UserGroupIcon,
     endpoint: '/api/legal/recommend-lawyers',
-    color: 'from-orange-500 to-red-500'
+    color: 'from-gray-700 to-gray-500'
   }
 ]
 
