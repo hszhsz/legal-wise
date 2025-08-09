@@ -22,3 +22,7 @@ node_modules/
 # Build files
 /dist/
 /build/
+
+# Process ID files
+.backend.pid
+.frontend.pid
