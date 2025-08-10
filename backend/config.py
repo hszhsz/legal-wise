@@ -27,9 +27,7 @@ class Settings(BaseModel):
     
     # LLM配置
     openai_api_key: Optional[str] = os.getenv("OPENAI_API_KEY")
-    openai_base_url: Optional[str] = os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1")
-    deepseek_api_key: Optional[str] = os.getenv("DEEPSEEK_API_KEY")
-    deepseek_base_url: str = os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com")
+    openai_base_url: Optional[str] = os.getenv("OPENAI_BASE_URL", "https://api.deepseek.com")
     default_model: str = os.getenv("DEFAULT_MODEL", "deepseek-chat")
     
     # Agent配置
@@ -79,9 +77,9 @@ class Settings(BaseModel):
         self._create_directories()
         
         # 验证必要的配置
-        if not self.deepseek_api_key and not self.openai_api_key:
+        if not self.openai_api_key:
             raise ValueError(
-                "请在.env文件中设置DEEPSEEK_API_KEY或OPENAI_API_KEY"
+                "请在.env文件中设置OPENAI_API_KEY"
             )
     
     def _create_directories(self):
@@ -97,18 +95,11 @@ class Settings(BaseModel):
     @property
     def llm_config(self) -> dict:
         """获取LLM配置"""
-        if self.deepseek_api_key:
-            return {
-                "api_key": self.deepseek_api_key,
-                "base_url": self.deepseek_base_url,
-                "model": self.default_model,
-                "provider": "deepseek"
-            }
-        elif self.openai_api_key:
+        if self.openai_api_key:
             return {
                 "api_key": self.openai_api_key,
                 "base_url": self.openai_base_url,
-                "model": "gpt-3.5-turbo",
+                "model": self.default_model,
                 "provider": "openai"
             }
         else:

@@ -123,7 +123,7 @@ export default function ConsultationPage() {
   const [agentActions, setAgentActions] = useState<AgentAction[]>([])
   const [finalReport, setFinalReport] = useState<FinalReport | null>(null)
   const [showChatHistory, setShowChatHistory] = useState(false)
-  const [showAgentActions, setShowAgentActions] = useState(true)
+  const [showAgentActions, setShowAgentActions] = useState(false)
   const [showServiceSelection, setShowServiceSelection] = useState(true)
   const [streamingActionContent, setStreamingActionContent] = useState<{[key: string]: string}>({})
   const messagesEndRef = useRef<HTMLDivElement>(null)
@@ -204,7 +204,7 @@ export default function ConsultationPage() {
           for (const line of lines) {
             if (line.startsWith('data: ')) {
               const data = line.slice(6).trim()
-              if (data === '[DONE]' || data === '' || data.startsWith('data: ')) {
+              if (data === '[DONE]' || data === '') {
                 continue
               }
               try {
@@ -344,6 +344,13 @@ export default function ConsultationPage() {
               >
                 <DocumentTextIcon className="w-4 h-4 mr-2" />
                 {showChatHistory ? '隐藏' : '显示'}聊天记录
+              </button>
+              <button
+                onClick={() => setShowAgentActions(!showAgentActions)}
+                className="flex items-center px-3 py-2 text-sm bg-purple-50 text-purple-600 rounded-lg hover:bg-purple-100"
+              >
+                <SparklesIcon className="w-4 h-4 mr-2" />
+                {showAgentActions ? '隐藏' : '显示'}AI执行过程
               </button>
               {!showServiceSelection && selectedService && (
                 <button
