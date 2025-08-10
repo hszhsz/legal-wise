@@ -35,10 +35,8 @@ mkdir -p logs
 
 # 启动后端服务
 echo "🔧 启动后端服务 (端口: 8001)..."
-cd backend
-uv run uvicorn main:app --host 0.0.0.0 --port 8001 --reload > ../logs/backend.log 2>&1 &
+uv run uvicorn backend.main:app --host 0.0.0.0 --port 8001 --reload > logs/backend.log 2>&1 &
 BACKEND_PID=$!
-cd ..
 
 # 等待后端启动
 echo "⏳ 等待后端服务启动..."
@@ -54,9 +52,9 @@ fi
 echo ""
 
 # 启动前端服务
-echo "🎨 启动前端服务 (端口: 3000)..."
+echo "🎨 启动前端服务 (端口: 3001)..."
 cd frontend
-npm run dev > ../logs/frontend.log 2>&1 &
+npm run dev -- --port 3001 > ../logs/frontend.log 2>&1 &
 FRONTEND_PID=$!
 cd ..
 
@@ -67,7 +65,7 @@ sleep 5
 echo ""
 echo "🎉 服务启动完成!"
 echo "================================"
-echo "📱 前端地址: http://localhost:3000"
+echo "📱 前端地址: http://localhost:3001"
 echo "🔧 后端地址: http://localhost:8001"
 echo "📊 后端健康检查: http://localhost:8001/api/health"
 echo "📝 日志文件:"

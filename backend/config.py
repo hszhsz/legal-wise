@@ -1,4 +1,4 @@
-from pydantic_settings import BaseSettings
+from pydantic import BaseModel
 from typing import Optional, List
 import os
 from pathlib import Path
@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 # 加载环境变量
 load_dotenv()
 
-class Settings(BaseSettings):
+class Settings(BaseModel):
     """应用配置类"""
     
     # 基础配置

@@ -1,3 +1,6 @@
+# Apply Pydantic v2 compatibility patch first
+from backend.pydantic_patch import patch_secret_str
+
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse

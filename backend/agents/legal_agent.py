@@ -364,7 +364,7 @@ class LegalPlanExecuteAgent:
                     
                     elif node_name == "finalizer":
                         yield {
-                            "type": "result",
+                            "type": "final_answer",
                             "content": node_output["final_answer"],
                             "data": {
                                 "execution_results": node_output["execution_results"],

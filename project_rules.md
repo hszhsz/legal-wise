@@ -30,17 +30,19 @@ Rightify 是一个智能法律咨询系统，基于 LangChain 和 LangGraph 的 
 - **语言**: Python 3.12+
 - **ASGI服务器**: Uvicorn 0.24.0+
 - **AI框架**: 
-  - LangChain 0.1.0+
-  - LangChain Community 0.0.10+
-  - LangChain OpenAI 0.0.5+
-  - LangGraph 0.0.20+
+  - LangChain 0.3.0+
+  - LangChain Community 0.3.0+
+  - LangChain OpenAI 0.2.0+
+  - LangGraph 0.2.0+
 - **HTTP客户端**: httpx 0.25.0+
 - **流式响应**: sse-starlette 2.0.0+
 - **文件处理**: 
   - python-multipart 0.0.6+
   - aiofiles 23.0.0+
 - **配置管理**: python-dotenv 1.0.0+
-- **数据验证**: Pydantic 2.0.0+
+- **数据验证**: 
+  - Pydantic 2.7.4+ (< 3.0.0)
+  - Pydantic Settings 2.0.0+
 - **模板引擎**: Jinja2 3.1.0+
 - **AI模型**: OpenAI 1.0.0+
 
@@ -102,7 +104,7 @@ npm run dev
 启动脚本会：
 - 检查必要依赖（Node.js、Python3、uv）
 - 启动后端服务（端口 8001）
-- 启动前端服务（端口 3000）
+- 启动前端服务（端口 3001）
 - 创建日志文件（`logs/backend.log`、`logs/frontend.log`）
 - 显示服务状态和访问地址
 
@@ -122,7 +124,7 @@ npm run dev
 
 ### 服务端口规范
 
-- **前端服务**: http://localhost:3000
+- **前端服务**: http://localhost:3001
 - **后端服务**: http://localhost:8001
 - **后端健康检查**: http://localhost:8001/api/health
 
@@ -180,13 +182,36 @@ rightify/
 - 后端日志: `logs/backend.log`
 - 实时查看日志: `tail -f logs/frontend.log` 或 `tail -f logs/backend.log`
 
+## 依赖版本兼容性规范
+
+### Python 依赖版本要求
+
+基于 LangChain 生态系统的最佳实践和兼容性要求：
+
+- **Pydantic**: 使用 2.7.4+ 但小于 3.0.0，确保与 LangChain 0.3.x 兼容
+- **LangChain 系列**: 统一使用 0.3.x 版本，避免版本不一致导致的兼容性问题
+- **Pydantic Settings**: 2.0.0+ 版本，解决 `__modify_schema__` 方法弃用问题
+
+### 版本锁定策略
+
+```toml
+# 推荐的版本约束
+pydantic = ">=2.7.4,<3.0.0"  # 严格版本范围
+langchain = ">=0.3.0"         # 最新稳定版本
+langchain-community = ">=0.3.0"
+langchain-openai = ">=0.2.0"
+langgraph = ">=0.2.0"
+pydantic-settings = ">=2.0.0"
+```
+
 ## 注意事项
 
 1. **依赖管理**: 严格使用 `uv` 管理 Python 依赖，不要使用 `pip` 直接安装
-2. **端口冲突**: 确保 3000 和 8001 端口未被占用
+2. **端口冲突**: 确保 3001（前端）和 8001（后端）端口未被占用
 3. **环境变量**: 不要将 `.env` 文件提交到版本控制
 4. **日志文件**: 日志文件已在 `.gitignore` 中排除
 5. **进程管理**: 使用提供的脚本启动和停止服务，避免手动管理进程
+6. **版本兼容性**: 更新依赖时务必检查 LangChain 和 Pydantic 的兼容性矩阵
 
 ---
 
